@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dragDrop: {fileID: 5718832401129282811}
+  stewTile: {fileID: 2567733903207242890, guid: b4bf9e7ebb914c24fb1a30a6718fab04, type: 3}
 --- !u!1001 &5151609407956180939
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -111,6 +112,10 @@ PrefabInstance:
     - target: {fileID: 586434090115777328, guid: 7862bd7de492cc84ea1fe118822e64e6, type: 3}
       propertyPath: targetTags.Array.data[1]
       value: '|Obstacle|'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2115573455643025831, guid: 7862bd7de492cc84ea1fe118822e64e6, type: 3}
+      propertyPath: m_Text
+      value: Stew
       objectReference: {fileID: 0}
     - target: {fileID: 6743031746050986479, guid: 7862bd7de492cc84ea1fe118822e64e6, type: 3}
       propertyPath: m_Name
