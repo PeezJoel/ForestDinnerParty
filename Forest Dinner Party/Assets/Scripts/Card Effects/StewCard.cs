@@ -41,7 +41,7 @@ public class StewCard : MonoBehaviour
                 if (downLeft.tag.Contains("|Food|"))
                 {
                     downLeft.transform.SetParent(stew.transform);
-                    downLeft.transform.position = new Vector2(0, 0);
+                    downLeft.transform.position = new Vector2(1000, 0);
                 }
             }
         }
@@ -54,7 +54,7 @@ public class StewCard : MonoBehaviour
                 if (upRight.tag.Contains("|Food|"))
                 {
                     upRight.transform.SetParent(stew.transform);
-                    upRight.transform.position = new Vector2(0, 0);
+                    upRight.transform.position = new Vector2(1000, 0);
                 }
             }
         }

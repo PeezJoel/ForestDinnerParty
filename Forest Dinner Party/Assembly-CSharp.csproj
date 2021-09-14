@@ -53,15 +53,16 @@
     <UnityVersion>2020.2.7f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\MoveTile.cs" />
     <Compile Include="Assets\Scripts\Card Effects\BigBombCard.cs" />
     <Compile Include="Assets\Scripts\DragDrop.cs" />
+    <Compile Include="Assets\Scripts\Card Effects\StewCard.cs" />
     <Compile Include="Assets\Scripts\Card Effects\_BaseDropEffectScript.cs" />
     <Compile Include="Assets\Scripts\DrawCards.cs" />
     <Compile Include="Assets\Scripts\GenerateTiles.cs" />
     <Compile Include="Assets\Scripts\GridManager.cs" />
     <Compile Include="Assets\Scripts\Card Effects\BombCard.cs" />
-    <Compile Include="Assets\Scripts\MoveTile.cs" />
-    <Compile Include="Assets\Scripts\Card Effects\StewCard.cs" />
+    <Compile Include="Assets\Scripts\TileDrop.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

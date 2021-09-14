@@ -6,7 +6,8 @@ using UnityEngine.UI;
 
 public class GridManager : MonoBehaviour
 {
-    //Attaches to play space, manages the grid of tile spaces
+    //Attaches to play space, manages the grid of tile spaces.
+    //Is used by other scripts to find each other
 
     GridLayoutGroup gridLayout; //the grid layout group component on this object
     int columnSize; //the number of columns in this grid

@@ -91,6 +91,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 949566912196419489, guid: 037b571cb47766e4485c9dd5cbd1b8a4, type: 3}
+      propertyPath: targetTags.Array.data[0]
+      value: '|Customer|'
+      objectReference: {fileID: 0}
     - target: {fileID: 2115573455643025831, guid: 037b571cb47766e4485c9dd5cbd1b8a4, type: 3}
       propertyPath: m_Text
       value: Stew
