@@ -10,23 +10,66 @@ public class GridManager : MonoBehaviour
     //Is used by other scripts to find each other
 
     GridLayoutGroup gridLayout; //the grid layout group component on this object
-    int columnSize; //the number of columns in this grid
+
+    public int columnCount; //the number of columns in this grid
+    public int rowCount; //The number of rows in this grid
+
+    public GameObject tileSpace; //The tile space prefab
+
+    float cellSpaceRatio = 0.233f; //The ratio of how big the spaces between cells are, compared to the cells themselves
+
+    float width; //Width and height of the playspace transform in UI
+    float height;
 
     // Start is called before the first frame update
     void Start()
     {
-        gridLayout = GetComponent<GridLayoutGroup>(); //finds the component
-        columnSize = gridLayout.constraintCount; //finds the grid size (no. of columns)
+        gridLayout = GetComponent<GridLayoutGroup>(); //finds the grid layout component
 
+        SetGridSize();
+        MakeTileSpaces();
+        
+    }
+
+     //Sets the size and spacing of the grid, based on the column/row count
+    private void SetGridSize()
+    {
+        RectTransform rectTrans = GetComponent<RectTransform>(); //The size of the playSpace
+        width = rectTrans.rect.width; //get play space width/height
+        height = rectTrans.rect.height;
+
+        gridLayout.constraintCount = columnCount; //sets the grid size (no. of columns)
+
+
+        float cellWidth = width / (columnCount + (columnCount + 1) * cellSpaceRatio); //use maths to find the size that cells should be
+        float cellHeight = height / (rowCount + (rowCount + 1) * cellSpaceRatio);
+        gridLayout.cellSize = new Vector2(cellWidth, cellHeight); //put that cell size into the grid layout
+
+
+        float horizontalSpace = (width - (cellWidth * columnCount)) / (columnCount + 1); //find appropriate size for spaces between and around cells
+        gridLayout.padding.left = (int)horizontalSpace; //set the initial padding
+
+        float verticalSpace = (height - (cellHeight * rowCount)) / (rowCount + 1);
+        gridLayout.padding.top = (int)verticalSpace;
+
+        gridLayout.spacing = new Vector2(horizontalSpace, verticalSpace); //set the gaps between cells
+    }
+
+    private void MakeTileSpaces()
+    {
+        int tileCount = columnCount * rowCount; //Calculate how big the grid is
+        for(int i = 0; i < tileCount; i++) //generate tile spaces until the board is full
+        {
+            Instantiate(tileSpace, transform); //uses the prefab
+        }
 
         GridLayoutGroup childGrid;
         foreach (Transform child in transform) //Makes all tile spaces (children of play space) have tiles the same size as they are
         {
-            childGrid = transform.gameObject.GetComponent<GridLayoutGroup>(); //get the grid component of the child 
+            childGrid = child.gameObject.GetComponent<GridLayoutGroup>(); //get the grid component of the child 
             childGrid.cellSize = gridLayout.cellSize; //Make same size as master grid
         }
     }
-
 
 
     //Finds the tile space to the left of the given one
@@ -34,7 +77,7 @@ public class GridManager : MonoBehaviour
     {
         int currentIndex = currentSpace.GetSiblingIndex(); //Gets the hierarchy number of the space that the tile's in
 
-        if (currentIndex % columnSize > 0) //If not the first in a row
+        if (currentIndex % columnCount > 0) //If not the first in a row
         {
             Transform tileSpace = transform.GetChild(currentIndex - 1); //Finds the space to the left of the indexed one
 
@@ -52,7 +95,7 @@ public class GridManager : MonoBehaviour
     {
         int currentIndex = currentSpace.GetSiblingIndex(); //Gets the hierarchy number of the space that the tile's in
 
-        if (currentIndex % columnSize < columnSize - 1) //If not the last in a row
+        if (currentIndex % columnCount < columnCount - 1) //If not the last in a row
         {
             Transform tileSpace = transform.GetChild(currentIndex + 1); //Finds the space to the right of the indexed one
 
@@ -70,9 +113,9 @@ public class GridManager : MonoBehaviour
     {
         int currentIndex = currentSpace.GetSiblingIndex(); //Gets the hierarchy number of the space that the tile's in
 
-        if (currentIndex >= columnSize) //If not in the first row
+        if (currentIndex >= columnCount) //If not in the first row
         {
-            Transform tileSpace = transform.GetChild(currentIndex - columnSize); //Finds the space above the indexed one
+            Transform tileSpace = transform.GetChild(currentIndex - columnCount); //Finds the space above the indexed one
 
             return GetTile(tileSpace);
 
@@ -88,9 +131,9 @@ public class GridManager : MonoBehaviour
     {
         int currentIndex = currentSpace.GetSiblingIndex(); //Gets the hierarchy number of the space that the tile's in
 
-        if (currentIndex < transform.childCount - columnSize) //If not in the last row
+        if (currentIndex < transform.childCount - columnCount) //If not in the last row
         {
-            Transform tileSpace = transform.GetChild(currentIndex + columnSize); //Finds the space below the indexed one
+            Transform tileSpace = transform.GetChild(currentIndex + columnCount); //Finds the space below the indexed one
 
             return GetTile(tileSpace);
         }
