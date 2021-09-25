@@ -12,6 +12,7 @@ TagManager:
   - '|Obstacle|Real|Tile|'
   - '|Food|Meal|Real|Tile|'
   - '|Customer|'
+  - '|Full|'
   layers:
   - Default
   - TransparentFX

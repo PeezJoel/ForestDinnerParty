@@ -6,22 +6,19 @@ public class StewCard : MonoBehaviour
 {
     public DragDrop dragDrop; //The drag and drop script attached to this object
     public GameObject stewTile;
+    Tile tile;
 
-    //Called every frame
-    void Update()
+    public void CardDrop()
     {
-        if (dragDrop.isDropped) //When the object is dropped
+        if (dragDrop.currentTarget.tag.Contains("|Discard|")) //When discarded
         {
-            if (dragDrop.currentTarget.tag.Contains("|Discard|")) //When discarded
-            {
-                dragDrop.currentTarget.GetComponent<MoveTile>().Activate(); //Use the discard effect
-            }
-            else
-            {
-                Effect(); //Do the main thing
-            }
-            Destroy(gameObject); //remove this card, now that it's been used
+            GameObject.Find("GameManager").GetComponent<MoveTile>().Activate(); //Use the discard effect
         }
+        else
+        {
+            Effect(); //Do the main thing
+        }
+        Destroy(gameObject); //remove this card, now that it's been used
     }
 
     //The main effect that this object has when dropped
@@ -30,8 +27,10 @@ public class StewCard : MonoBehaviour
         Transform parentSpace = dragDrop.currentTarget.transform.parent;
         GridManager gridManager = dragDrop.currentTarget.transform.parent.parent.GetComponent<GridManager>();
 
-        GameObject stew = Instantiate(stewTile, parentSpace);
-        Destroy(dragDrop.currentTarget);
+        GameObject stewObj = Instantiate(stewTile, parentSpace);
+        dragDrop.currentTarget.GetComponent<Tile>().Remove();
+        Tile stew = stewObj.GetComponent<Tile>();
+
 
         GameObject left = gridManager.Left(parentSpace); //Find objects
         if (left){
@@ -40,8 +39,10 @@ public class StewCard : MonoBehaviour
             {
                 if (downLeft.tag.Contains("|Food|"))
                 {
-                    downLeft.transform.SetParent(stew.transform);
-                    downLeft.transform.position = new Vector2(1000, 0);
+                    tile = downLeft.GetComponent<Tile>();
+                    stew.score += tile.score;
+                    stew.ingredients.AddRange(tile.ingredients);
+                    tile.Remove();
                 }
             }
         }
@@ -53,8 +54,10 @@ public class StewCard : MonoBehaviour
             {
                 if (upRight.tag.Contains("|Food|"))
                 {
-                    upRight.transform.SetParent(stew.transform);
-                    upRight.transform.position = new Vector2(1000, 0);
+                    tile = upRight.GetComponent<Tile>();
+                    stew.score += tile.score;
+                    stew.ingredients.AddRange(tile.ingredients);
+                    tile.Remove();
                 }
             }
         }

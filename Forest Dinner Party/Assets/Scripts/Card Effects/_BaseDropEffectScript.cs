@@ -5,22 +5,20 @@ using UnityEngine;
 public class _BaseDropEffectScript : MonoBehaviour
 {
     public DragDrop dragDrop; //The drag and drop script attached to this object
+    
 
-    //Called every frame
-    void Update()
+    public void CardDrop()
     {
-        if (dragDrop.isDropped) //When the object is dropped
+
+        if (dragDrop.currentTarget.tag.Contains("|Discard|"))//When discarded
         {
-            if (dragDrop.currentTarget.tag.Contains("Discard"))//When discarded
-            {
-                dragDrop.currentTarget.GetComponent<MoveTile>().Activate(); //Use the discard effect
-            }
-            else
-            {
-                Effect(); //Do the main thing
-            }
-            Destroy(gameObject); //remove this card, now that it's been used
+            GameObject.Find("GameManager").GetComponent<MoveTile>().Activate(); //Use the discard effect
         }
+        else
+        {
+            Effect(); //Do the main thing
+        }
+        Destroy(gameObject); //remove this card, now that it's been used
     }
 
     //The main effect that this object has when dropped
@@ -29,11 +27,11 @@ public class _BaseDropEffectScript : MonoBehaviour
 
     }
     
-    //Reset the card. For when the target is bad
+    //Reset the card. For when the target is bad. Not in use
+    /*
     void ResetCard()
     {
-        dragDrop.isDropped = false;
         dragDrop.currentTarget = null;
         transform.position = dragDrop.startPos;
-    }
+    }*/
 }

@@ -9,7 +9,7 @@ public class GridManager : MonoBehaviour
     //Attaches to play space, manages the grid of tile spaces.
     //Is used by other scripts to find each other
 
-    GridLayoutGroup gridLayout; //the grid layout group component on this object
+    public GridLayoutGroup gridLayout; //the grid layout group component on this object
 
     public int columnCount; //the number of columns in this grid
     public int rowCount; //The number of rows in this grid
@@ -24,15 +24,10 @@ public class GridManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gridLayout = GetComponent<GridLayoutGroup>(); //finds the grid layout component
-
-        SetGridSize();
-        MakeTileSpaces();
-        
     }
 
      //Sets the size and spacing of the grid, based on the column/row count
-    private void SetGridSize()
+    public void SetGridSize()
     {
         RectTransform rectTrans = GetComponent<RectTransform>(); //The size of the playSpace
         width = rectTrans.rect.width; //get play space width/height
@@ -55,7 +50,7 @@ public class GridManager : MonoBehaviour
         gridLayout.spacing = new Vector2(horizontalSpace, verticalSpace); //set the gaps between cells
     }
 
-    private void MakeTileSpaces()
+    public void MakeTileSpaces()
     {
         int tileCount = columnCount * rowCount; //Calculate how big the grid is
         for(int i = 0; i < tileCount; i++) //generate tile spaces until the board is full

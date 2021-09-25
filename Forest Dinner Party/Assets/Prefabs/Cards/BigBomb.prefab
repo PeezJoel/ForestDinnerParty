@@ -104,6 +104,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 586434090115777328, guid: 7862bd7de492cc84ea1fe118822e64e6, type: 3}
+      propertyPath: dropTrigger.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 586434090115777328, guid: 7862bd7de492cc84ea1fe118822e64e6, type: 3}
+      propertyPath: dropTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 586434090115777328, guid: 7862bd7de492cc84ea1fe118822e64e6, type: 3}
+      propertyPath: dropTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6587317317288037746}
+    - target: {fileID: 586434090115777328, guid: 7862bd7de492cc84ea1fe118822e64e6, type: 3}
+      propertyPath: dropTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 586434090115777328, guid: 7862bd7de492cc84ea1fe118822e64e6, type: 3}
+      propertyPath: dropTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CardDrop
+      objectReference: {fileID: 0}
+    - target: {fileID: 586434090115777328, guid: 7862bd7de492cc84ea1fe118822e64e6, type: 3}
+      propertyPath: dropTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BigBombCard, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 586434090115777328, guid: 7862bd7de492cc84ea1fe118822e64e6, type: 3}
+      propertyPath: dropTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2115573455643025831, guid: 7862bd7de492cc84ea1fe118822e64e6, type: 3}
       propertyPath: m_Text
       value: Big Bomb

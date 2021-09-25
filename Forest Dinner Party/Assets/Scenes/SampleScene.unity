@@ -236,15 +236,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 078c89f04d6f022479065526cdd2706c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  handSpace: {fileID: 0}
   handSize: 3
   availableCards:
   - {fileID: 1939431669023165988, guid: a53153e770bd98f4ea5b55bf3a0d89f6, type: 3}
   - {fileID: 1939431669023165988, guid: a53153e770bd98f4ea5b55bf3a0d89f6, type: 3}
   - {fileID: 1939431669023165988, guid: a53153e770bd98f4ea5b55bf3a0d89f6, type: 3}
-  - {fileID: 7672677778505333404, guid: 1b0b4a9e5089fd144830de990267d35c, type: 3}
   - {fileID: 3284999502397046040, guid: 18c7e356e8af6c74d85bc129d0a827c9, type: 3}
   - {fileID: 3284999502397046040, guid: 18c7e356e8af6c74d85bc129d0a827c9, type: 3}
-  - {fileID: 7672677778505333404, guid: 1b0b4a9e5089fd144830de990267d35c, type: 3}
+  - {fileID: 3284999502397046040, guid: 18c7e356e8af6c74d85bc129d0a827c9, type: 3}
+  - {fileID: 3284999502397046040, guid: 18c7e356e8af6c74d85bc129d0a827c9, type: 3}
 --- !u!1 &294093792
 GameObject:
   m_ObjectHideFlags: 0
@@ -421,7 +422,7 @@ GameObject:
   - component: {fileID: 650859457}
   m_Layer: 5
   m_Name: Customer
-  m_TagString: Untagged
+  m_TagString: '|Customer|'
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -574,7 +575,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &851274540
 GameObject:
@@ -659,7 +660,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1489565338}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GenerateTiles, Assembly-CSharp
         m_MethodName: TileGenerator
         m_Mode: 1
@@ -1116,7 +1117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 123093514579f0a4c82d9ab271a14027, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playSpace: {fileID: 0}
+  playSpace: {fileID: 1489565334}
 --- !u!1 &1482494228
 GameObject:
   m_ObjectHideFlags: 0
@@ -1215,7 +1216,7 @@ RectTransform:
   - {fileID: 851274541}
   - {fileID: 1395590546}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1234,7 +1235,6 @@ GameObject:
   - component: {fileID: 1489565336}
   - component: {fileID: 1489565335}
   - component: {fileID: 1489565337}
-  - component: {fileID: 1489565338}
   - component: {fileID: 1489565339}
   m_Layer: 5
   m_Name: Play Space
@@ -1324,31 +1324,6 @@ MonoBehaviour:
   m_Spacing: {x: 15, y: 15}
   m_Constraint: 1
   m_ConstraintCount: 3
---- !u!114 &1489565338
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1489565333}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f51a4dd46c6d3d342b8434e0b38c41f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  availableTiles:
-  - {fileID: 2033018016664287471, guid: ee232799f7e04f54096530bb32a34393, type: 3}
-  - {fileID: 2033018016664287471, guid: ee232799f7e04f54096530bb32a34393, type: 3}
-  - {fileID: 2033018016664287471, guid: ee232799f7e04f54096530bb32a34393, type: 3}
-  - {fileID: 2033018016664287471, guid: ee232799f7e04f54096530bb32a34393, type: 3}
-  - {fileID: 2885673511795770091, guid: c9f713ce4de73f04bbe345bf0ff0a333, type: 3}
-  - {fileID: 8552418433199980047, guid: 9484dd178cfda6541b3bbd58f7ed7ab8, type: 3}
-  - {fileID: 8552418433199980047, guid: 9484dd178cfda6541b3bbd58f7ed7ab8, type: 3}
-  - {fileID: 8552418433199980047, guid: 9484dd178cfda6541b3bbd58f7ed7ab8, type: 3}
-  - {fileID: 8552418433199980047, guid: 9484dd178cfda6541b3bbd58f7ed7ab8, type: 3}
-  - {fileID: 8552418433199980047, guid: 9484dd178cfda6541b3bbd58f7ed7ab8, type: 3}
-  - {fileID: 932341530618764761, guid: 8dda33683367fdd4592801f12340f033, type: 3}
-  - {fileID: 932341530618764761, guid: 8dda33683367fdd4592801f12340f033, type: 3}
 --- !u!114 &1489565339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1364,6 +1339,101 @@ MonoBehaviour:
   columnCount: 3
   rowCount: 3
   tileSpace: {fileID: 4369621572485244821, guid: f9b7087c297f1ca41822d0371afbee76, type: 3}
+--- !u!1 &1931712544
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1931712548}
+  - component: {fileID: 1931712547}
+  - component: {fileID: 1931712546}
+  - component: {fileID: 1931712545}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1931712545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931712544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 078c89f04d6f022479065526cdd2706c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handSpace: {fileID: 157362598}
+  handSize: 3
+  availableCards:
+  - {fileID: 1939431669023165988, guid: a53153e770bd98f4ea5b55bf3a0d89f6, type: 3}
+  - {fileID: 1939431669023165988, guid: a53153e770bd98f4ea5b55bf3a0d89f6, type: 3}
+  - {fileID: 1939431669023165988, guid: a53153e770bd98f4ea5b55bf3a0d89f6, type: 3}
+  - {fileID: 3284999502397046040, guid: 18c7e356e8af6c74d85bc129d0a827c9, type: 3}
+  - {fileID: 3284999502397046040, guid: 18c7e356e8af6c74d85bc129d0a827c9, type: 3}
+  - {fileID: 3284999502397046040, guid: 18c7e356e8af6c74d85bc129d0a827c9, type: 3}
+  - {fileID: 3284999502397046040, guid: 18c7e356e8af6c74d85bc129d0a827c9, type: 3}
+--- !u!114 &1931712546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931712544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f51a4dd46c6d3d342b8434e0b38c41f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playSpace: {fileID: 1489565333}
+  availableTiles:
+  - {fileID: 2033018016664287471, guid: ee232799f7e04f54096530bb32a34393, type: 3}
+  - {fileID: 2033018016664287471, guid: ee232799f7e04f54096530bb32a34393, type: 3}
+  - {fileID: 2033018016664287471, guid: ee232799f7e04f54096530bb32a34393, type: 3}
+  - {fileID: 2033018016664287471, guid: ee232799f7e04f54096530bb32a34393, type: 3}
+  - {fileID: 2885673511795770091, guid: c9f713ce4de73f04bbe345bf0ff0a333, type: 3}
+  - {fileID: 8552418433199980047, guid: 9484dd178cfda6541b3bbd58f7ed7ab8, type: 3}
+  - {fileID: 8552418433199980047, guid: 9484dd178cfda6541b3bbd58f7ed7ab8, type: 3}
+  - {fileID: 8552418433199980047, guid: 9484dd178cfda6541b3bbd58f7ed7ab8, type: 3}
+  - {fileID: 8552418433199980047, guid: 9484dd178cfda6541b3bbd58f7ed7ab8, type: 3}
+  - {fileID: 932341530618764761, guid: 8dda33683367fdd4592801f12340f033, type: 3}
+  - {fileID: 932341530618764761, guid: 8dda33683367fdd4592801f12340f033, type: 3}
+  - {fileID: 932341530618764761, guid: 8dda33683367fdd4592801f12340f033, type: 3}
+--- !u!114 &1931712547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931712544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faa1bed21a995434099c9a5658d92e38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playSpace: {fileID: 1489565333}
+  handSpace: {fileID: 157362598}
+--- !u!4 &1931712548
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931712544}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 83.79186, y: 230.93552, z: -2280.4878}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2017646376
 GameObject:
   m_ObjectHideFlags: 0

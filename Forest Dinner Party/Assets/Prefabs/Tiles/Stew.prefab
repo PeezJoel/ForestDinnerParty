@@ -7,6 +7,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 102546278601959754, guid: 037b571cb47766e4485c9dd5cbd1b8a4, type: 3}
+      propertyPath: score
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 102546278601959754, guid: 037b571cb47766e4485c9dd5cbd1b8a4, type: 3}
+      propertyPath: ingredients.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 102546278601959754, guid: 037b571cb47766e4485c9dd5cbd1b8a4, type: 3}
+      propertyPath: ingredients.Array.data[0]
+      value: Stew
+      objectReference: {fileID: 0}
     - target: {fileID: 280791097090027779, guid: 037b571cb47766e4485c9dd5cbd1b8a4, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

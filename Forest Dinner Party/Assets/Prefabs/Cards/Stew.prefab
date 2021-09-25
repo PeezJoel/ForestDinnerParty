@@ -1,5 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6733436608613050285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1939431669023165988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc03e058402f79541a859028ebab7539, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dragDrop: {fileID: 5718832401129282811}
+  stewTile: {fileID: 2567733903207242890, guid: b4bf9e7ebb914c24fb1a30a6718fab04, type: 3}
 --- !u!1 &2112099422653183499
 GameObject:
   m_ObjectHideFlags: 0
@@ -150,20 +164,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &-6733436608613050285
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1939431669023165988}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc03e058402f79541a859028ebab7539, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dragDrop: {fileID: 5718832401129282811}
-  stewTile: {fileID: 2567733903207242890, guid: b4bf9e7ebb914c24fb1a30a6718fab04, type: 3}
 --- !u!1001 &5151609407956180939
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -262,6 +262,34 @@ PrefabInstance:
     - target: {fileID: 586434090115777328, guid: 7862bd7de492cc84ea1fe118822e64e6, type: 3}
       propertyPath: targetTags.Array.data[1]
       value: '|Obstacle|'
+      objectReference: {fileID: 0}
+    - target: {fileID: 586434090115777328, guid: 7862bd7de492cc84ea1fe118822e64e6, type: 3}
+      propertyPath: dropTrigger.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 586434090115777328, guid: 7862bd7de492cc84ea1fe118822e64e6, type: 3}
+      propertyPath: dropTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 586434090115777328, guid: 7862bd7de492cc84ea1fe118822e64e6, type: 3}
+      propertyPath: dropTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: -6733436608613050285}
+    - target: {fileID: 586434090115777328, guid: 7862bd7de492cc84ea1fe118822e64e6, type: 3}
+      propertyPath: dropTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 586434090115777328, guid: 7862bd7de492cc84ea1fe118822e64e6, type: 3}
+      propertyPath: dropTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CardDrop
+      objectReference: {fileID: 0}
+    - target: {fileID: 586434090115777328, guid: 7862bd7de492cc84ea1fe118822e64e6, type: 3}
+      propertyPath: dropTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: StewCard, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 586434090115777328, guid: 7862bd7de492cc84ea1fe118822e64e6, type: 3}
+      propertyPath: dropTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2115573455643025831, guid: 7862bd7de492cc84ea1fe118822e64e6, type: 3}
       propertyPath: m_Text

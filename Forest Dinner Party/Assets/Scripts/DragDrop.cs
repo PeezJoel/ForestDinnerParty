@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DragDrop : MonoBehaviour
 {
@@ -11,20 +12,14 @@ public class DragDrop : MonoBehaviour
     [HideInInspector]
     public Vector2 startPos; //Keeps track of where the item was before drag
     bool isDragging; //Is true when item is currently being dragged
-    [HideInInspector]
-    public bool isDropped; //Is true when the game object is dropped onto a valid drop zone. Used by other scripts
 
 
     public List<string> targetTags; //The tags that are used for objects this can be dropped on
     [HideInInspector]
     public GameObject currentTarget; //The drop zone that the item is currently over (or null)
 
-
-    //Start func
-    void Start()
-    {
-        isDropped = false; //Initially is undropped
-    }
+    [SerializeField]
+    private UnityEvent dropTrigger; //Invoked when the game object is dropped onto a valid drop zone.
 
     // Update is called once per frame
     void Update()
@@ -55,7 +50,7 @@ public class DragDrop : MonoBehaviour
         isDragging = false;
         if (currentTarget != null) //Has a target
         {
-            isDropped = true; //Do the thing, with the current drop zone target
+            dropTrigger.Invoke(); //Do the thing, with the current drop zone target
         }
         else
         {
@@ -66,6 +61,7 @@ public class DragDrop : MonoBehaviour
     //When enter a legal drop zone, set current target
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
         bool hasAllTags = true; //Check that the object has all necessary tags
         for(int i = 0; i < targetTags.Count; i++)
         {
