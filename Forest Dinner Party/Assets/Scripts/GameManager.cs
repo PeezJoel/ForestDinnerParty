@@ -33,6 +33,8 @@ public class GameManager : MonoBehaviour
         {
             drawCards.CardDraw();
 
+            generateTiles.TileGenerator();
+
             turn += 1;
         }
     }
