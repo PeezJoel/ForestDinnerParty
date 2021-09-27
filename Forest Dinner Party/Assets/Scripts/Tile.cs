@@ -23,6 +23,7 @@ public class Tile : MonoBehaviour
         if (dragDrop.currentTarget.tag == "|Customer|")
         {
             Debug.Log(ingredients);
+            Remove();
         }
         else
         {

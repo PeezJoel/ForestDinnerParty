@@ -18,8 +18,7 @@ public class GameManager : MonoBehaviour
         gridManager = playSpace.GetComponent<GridManager>();
         gridManager.SetGridSize();
         gridManager.MakeTileSpaces();
-
-
+        
         generateTiles = GetComponent<GenerateTiles>();
         generateTiles.TileGenerator();
 
@@ -29,13 +28,19 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(handSpace.transform.childCount == 0)
+        if(handSpace.transform.childCount == 0) //if player has no cards
         {
-            drawCards.CardDraw();
-
-            generateTiles.TileGenerator();
-
-            turn += 1;
+            NextTurn(); //move to next turn
         }
+    }
+
+    //At end of turn, when player has no more actions
+    void NextTurn()
+    {
+        drawCards.CardDraw(); //Draw new hand
+
+        generateTiles.TileGenerator(); //Replenish the board
+
+        turn += 1; //increment the turn counter
     }
 }
