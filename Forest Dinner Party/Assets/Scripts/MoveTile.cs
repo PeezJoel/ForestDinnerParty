@@ -21,7 +21,7 @@ public class MoveTile : MonoBehaviour
         nullTagList = new List<string> { "|Null|" };
     }
 
-    //Attached to discard space. When activated (By discarding), will let you move a tile
+    //When activated (By discarding), will let you move a tile
     public void Activate()
     {
         //isActive = true; //in tile moving state
@@ -31,6 +31,7 @@ public class MoveTile : MonoBehaviour
         }
     }
 
+    //Stops tiles from moving
     public void Deactivate()
     {
         //isActive = false; //out of tile moving state
@@ -40,33 +41,31 @@ public class MoveTile : MonoBehaviour
         }
     }
 
+    //changes the taglist of where a tile can be dropped, letting it move to empty spaces
     private void EnableDrop(Transform tileSpace)
     {
-        if (tileSpace.childCount > 0)
+        if (tileSpace.childCount > 0) //if there is a tile in the space
         {
-            dragDrop = tileSpace.GetChild(0).gameObject.GetComponent<DragDrop>();
-            dragDrop.targetTags = spaceTagList;
+            dragDrop = tileSpace.GetChild(0).gameObject.GetComponent<DragDrop>(); //get the tile's dragdrop
+            dragDrop.targetTags = spaceTagList; //change the tag list, allowing for movement to empty tile spaces
         }
     }
 
+    //changes the taglist of where a tile can be dropped, disabling movement to other spaces
     private void DisableDrop(Transform tileSpace)
     {
-        if (tileSpace.childCount > 0)
+        if (tileSpace.childCount > 0) //if there is a tile in the space
         {
-            Transform tile = tileSpace.GetChild(0);
-            dragDrop = tile.gameObject.GetComponent<DragDrop>();
-            if (tile.tag.Contains("|Meal|"))
+            Transform tile = tileSpace.GetChild(0); //get the tile
+            dragDrop = tile.gameObject.GetComponent<DragDrop>(); //get the tile's dragdrop
+            if (tile.tag.Contains("|Meal|")) //if the tile is a meal, it can still be delivered to customers
             {
                 dragDrop.targetTags = customerTagList;
             }
-            else
+            else //can't drop anywhere
             {
                 dragDrop.targetTags = nullTagList;
             }
         }
     }
-
-    /*Todo:
-    Deactivate
-     */
 }

@@ -12,6 +12,10 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 102546278601959754, guid: 037b571cb47766e4485c9dd5cbd1b8a4, type: 3}
+      propertyPath: points
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 102546278601959754, guid: 037b571cb47766e4485c9dd5cbd1b8a4, type: 3}
       propertyPath: ingredients.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -107,6 +111,26 @@ PrefabInstance:
       propertyPath: m_Text
       value: Carrot
       objectReference: {fileID: 0}
+    - target: {fileID: 5121248019777167864, guid: 037b571cb47766e4485c9dd5cbd1b8a4, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5121248019777167864, guid: 037b571cb47766e4485c9dd5cbd1b8a4, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 3.3333
+      objectReference: {fileID: 0}
+    - target: {fileID: 5121248019777167864, guid: 037b571cb47766e4485c9dd5cbd1b8a4, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 2.072
+      objectReference: {fileID: 0}
+    - target: {fileID: 5121248019777167864, guid: 037b571cb47766e4485c9dd5cbd1b8a4, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.00012207
+      objectReference: {fileID: 0}
+    - target: {fileID: 5121248019777167864, guid: 037b571cb47766e4485c9dd5cbd1b8a4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -2.6647
+      objectReference: {fileID: 0}
     - target: {fileID: 6743031746050986479, guid: 037b571cb47766e4485c9dd5cbd1b8a4, type: 3}
       propertyPath: m_Name
       value: Carrot
@@ -115,6 +139,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: '|Food|Real|Tile|'
       objectReference: {fileID: 0}
+    - target: {fileID: 7741873043385788020, guid: 037b571cb47766e4485c9dd5cbd1b8a4, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 182d980a95133404f907555a12642a44, type: 3}
     - target: {fileID: 8655055180402517117, guid: 037b571cb47766e4485c9dd5cbd1b8a4, type: 3}
       propertyPath: m_Color.b
       value: 0.028346404

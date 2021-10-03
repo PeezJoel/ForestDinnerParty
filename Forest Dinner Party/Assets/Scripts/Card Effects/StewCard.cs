@@ -40,7 +40,7 @@ public class StewCard : MonoBehaviour
                 if (downLeft.tag.Contains("|Food|"))
                 {
                     tile = downLeft.GetComponent<Tile>();
-                    stew.score += tile.score;
+                    stew.points += tile.points;
                     stew.ingredients.AddRange(tile.ingredients);
                     tile.Remove();
                 }
@@ -55,7 +55,7 @@ public class StewCard : MonoBehaviour
                 if (upRight.tag.Contains("|Food|"))
                 {
                     tile = upRight.GetComponent<Tile>();
-                    stew.score += tile.score;
+                    stew.points += tile.points;
                     stew.ingredients.AddRange(tile.ingredients);
                     tile.Remove();
                 }
