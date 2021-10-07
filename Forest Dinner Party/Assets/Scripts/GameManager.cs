@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     GridManager gridManager;
     MoveTile moveTile;
 
-    int turn = 0; //keeps track of current turn
+    int turnsLeft; //keeps track of current turn, and how many are left based on cards in deck
     public Text turnDisplay; //displays the turn number in UI
     public GameObject turnButton; //the button that lets the player move to next turn
 
@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
         generateTiles = GetComponent<GenerateTiles>(); //find the tile generator
 
         drawCards = GetComponent<DrawCards>(); //find the card generator
+        turnsLeft = drawCards.availableCards.Count / drawCards.handSize;
 
         moveTile = GetComponent<MoveTile>(); //find the tile mover
 
@@ -47,7 +48,7 @@ public class GameManager : MonoBehaviour
     //At end of turn, when player has no more actions
     public void NextTurn()
     {
-        turn += 1; //increment the turn counter
+        turnsLeft -= 1; //increment the turn counter
 
         turnButton.SetActive(false); //Disable turn button
 
@@ -57,7 +58,7 @@ public class GameManager : MonoBehaviour
 
         generateTiles.TileGenerator(); //Fill the board
         
-        turnDisplay.text = turn.ToString(); //Update the turn counter display
+        turnDisplay.text = turnsLeft.ToString(); //Update the turn counter display
     }
 
     //Add a new score to the total

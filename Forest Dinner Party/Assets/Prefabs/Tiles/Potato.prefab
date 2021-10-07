@@ -111,6 +111,38 @@ PrefabInstance:
       propertyPath: m_Text
       value: Potato
       objectReference: {fileID: 0}
+    - target: {fileID: 5121248019777167864, guid: 037b571cb47766e4485c9dd5cbd1b8a4, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5121248019777167864, guid: 037b571cb47766e4485c9dd5cbd1b8a4, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5121248019777167864, guid: 037b571cb47766e4485c9dd5cbd1b8a4, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5121248019777167864, guid: 037b571cb47766e4485c9dd5cbd1b8a4, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5121248019777167864, guid: 037b571cb47766e4485c9dd5cbd1b8a4, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 2.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5121248019777167864, guid: 037b571cb47766e4485c9dd5cbd1b8a4, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 2.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5121248019777167864, guid: 037b571cb47766e4485c9dd5cbd1b8a4, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.0000019073486
+      objectReference: {fileID: 0}
+    - target: {fileID: 5121248019777167864, guid: 037b571cb47766e4485c9dd5cbd1b8a4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -4
+      objectReference: {fileID: 0}
     - target: {fileID: 6743031746050986479, guid: 037b571cb47766e4485c9dd5cbd1b8a4, type: 3}
       propertyPath: m_Name
       value: Potato
