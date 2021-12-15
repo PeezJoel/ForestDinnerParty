@@ -6,8 +6,6 @@ public class MoveTile : MonoBehaviour
 {
     public Transform playSpace; //the main play space, which the tiles are in
 
-    //bool isActive = false; //when a card is discarded, turns true. Changes game state to allow tiles to move, (and cards not?)
-
     List<string> spaceTagList;
     List<string> customerTagList;
     List<string> nullTagList;
@@ -16,9 +14,9 @@ public class MoveTile : MonoBehaviour
 
     private void Start()
     {
-        spaceTagList = new List<string> { "|Space|" }; //the list of tags that will be given to a tile to drop on
-        customerTagList = new List<string> { "|Customer|" };
-        nullTagList = new List<string> { "|Null|" };
+        spaceTagList = new List<string> { "|Space|"/*, "|Discard|"*/ }; //the list of tags that will be given to a tile to drop on; Discard is currently not in use for tiles, see also Tile.cs line 31
+        customerTagList = new List<string> { "|Customer|" }; //the list of tags for a ready meal
+        nullTagList = new List<string> { "|Null|" }; //the list of tags for a tile that can't move
     }
 
     //When activated (By discarding), will let you move a tile
@@ -69,3 +67,5 @@ public class MoveTile : MonoBehaviour
         }
     }
 }
+
+//todo: let meals have customer and space tags at same time

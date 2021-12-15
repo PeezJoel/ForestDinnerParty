@@ -62,16 +62,17 @@ public class DragDrop : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-        bool hasAllTags = true; //Check that the object has all necessary tags
+        bool hasTag = false; //Check that the object has one of the necessary tags
         for(int i = 0; i < targetTags.Count; i++)
         {
-            if (!collision.gameObject.tag.Contains(targetTags[i])) //Is missing a tag
+            if (collision.gameObject.tag.Contains(targetTags[i])) //Contains tag
             {
-                hasAllTags = false;
+                hasTag = true;
+                i = targetTags.Count;
             }
         }
 
-        if (hasAllTags) //Is legal
+        if (hasTag) //Is legal
         {
             currentTarget = collision.gameObject; //sets to target, meaning it will drop onto it
         }

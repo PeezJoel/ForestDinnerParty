@@ -148,6 +148,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3381646550643027374, guid: 7862bd7de492cc84ea1fe118822e64e6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c4c95265b58adac42bb168e12ad38ff1, type: 3}
     - target: {fileID: 6743031746050986479, guid: 7862bd7de492cc84ea1fe118822e64e6, type: 3}
       propertyPath: m_Name
       value: Bomb

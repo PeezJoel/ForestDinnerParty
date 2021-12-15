@@ -7,12 +7,12 @@ TagManager:
   - '|Space|'
   - '|Card|'
   - '|Tile|'
-  - '|Discard|Food|Obstacle|Tile|'
   - '|Food|Real|Tile|'
   - '|Obstacle|Real|Tile|'
   - '|Food|Meal|Real|Tile|'
   - '|Customer|'
   - '|Full|'
+  - '|Discard|'
   layers:
   - Default
   - TransparentFX

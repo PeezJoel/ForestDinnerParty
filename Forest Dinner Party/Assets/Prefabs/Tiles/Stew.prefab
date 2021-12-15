@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 102546278601959754, guid: 037b571cb47766e4485c9dd5cbd1b8a4, type: 3}
       propertyPath: points
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 102546278601959754, guid: 037b571cb47766e4485c9dd5cbd1b8a4, type: 3}
       propertyPath: ingredients.Array.size

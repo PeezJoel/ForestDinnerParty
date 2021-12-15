@@ -68,7 +68,7 @@ public class GridManager : MonoBehaviour
 
 
     //Finds the tile space to the left of the given one
-    public GameObject Left(Transform currentSpace)
+    public Transform Left(Transform currentSpace)
     {
         int currentIndex = currentSpace.GetSiblingIndex(); //Gets the hierarchy number of the space that the tile's in
 
@@ -76,7 +76,7 @@ public class GridManager : MonoBehaviour
         {
             Transform tileSpace = transform.GetChild(currentIndex - 1); //Finds the space to the left of the indexed one
 
-            return GetTile(tileSpace);
+            return tileSpace;
 
         }
         else
@@ -86,7 +86,7 @@ public class GridManager : MonoBehaviour
     }
 
     //Finds the tile space to the right of the given one
-    public GameObject Right(Transform currentSpace)
+    public Transform Right(Transform currentSpace)
     {
         int currentIndex = currentSpace.GetSiblingIndex(); //Gets the hierarchy number of the space that the tile's in
 
@@ -94,7 +94,7 @@ public class GridManager : MonoBehaviour
         {
             Transform tileSpace = transform.GetChild(currentIndex + 1); //Finds the space to the right of the indexed one
 
-            return GetTile(tileSpace);
+            return tileSpace;
 
         }
         else
@@ -104,7 +104,7 @@ public class GridManager : MonoBehaviour
     }
 
     //Finds the tile space above the given one
-    public GameObject Up(Transform currentSpace)
+    public Transform Up(Transform currentSpace)
     {
         int currentIndex = currentSpace.GetSiblingIndex(); //Gets the hierarchy number of the space that the tile's in
 
@@ -112,7 +112,7 @@ public class GridManager : MonoBehaviour
         {
             Transform tileSpace = transform.GetChild(currentIndex - columnCount); //Finds the space above the indexed one
 
-            return GetTile(tileSpace);
+            return tileSpace;
 
         }
         else
@@ -122,7 +122,7 @@ public class GridManager : MonoBehaviour
     }
 
     //Finds the tile space under the given one
-    public GameObject Down(Transform currentSpace)
+    public Transform Down(Transform currentSpace)
     {
         int currentIndex = currentSpace.GetSiblingIndex(); //Gets the hierarchy number of the space that the tile's in
 
@@ -130,7 +130,7 @@ public class GridManager : MonoBehaviour
         {
             Transform tileSpace = transform.GetChild(currentIndex + columnCount); //Finds the space below the indexed one
 
-            return GetTile(tileSpace);
+            return tileSpace;
         }
         else
         {
@@ -139,15 +139,22 @@ public class GridManager : MonoBehaviour
     }
 
     //Gets the tile in this space if there is one
-    private GameObject GetTile(Transform tileSpace)
+    public GameObject GetTile(Transform tileSpace)
     {
-        if (tileSpace.childCount > 0) //if there is a tile in that space
+        if (tileSpace)
         {
-            return (tileSpace.GetChild(0).gameObject); //returns the tile in that space
+            if (tileSpace.childCount > 0) //if there is a tile in that space
+            {
+                return (tileSpace.GetChild(0).gameObject); //returns the tile in that space
+            }
+            else
+            {
+                return null; //there's no tile in that space
+            }
         }
         else
         {
-            return null; //there's no tile in that space
+            return null; //there's no space
         }
     }
 }

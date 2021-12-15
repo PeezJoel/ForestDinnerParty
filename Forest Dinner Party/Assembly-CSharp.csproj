@@ -47,7 +47,7 @@
   <PropertyGroup>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <UnityProjectGenerator>Package</UnityProjectGenerator>
-    <UnityProjectGeneratorVersion>2.0.11</UnityProjectGeneratorVersion>
+    <UnityProjectGeneratorVersion>2.0.12</UnityProjectGeneratorVersion>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>Android:13</UnityBuildTarget>
     <UnityVersion>2020.3.18f1</UnityVersion>
@@ -60,10 +60,14 @@
     <Compile Include="Assets\Scripts\Card Effects\_BaseDropEffectScript.cs" />
     <Compile Include="Assets\Scripts\DrawCards.cs" />
     <Compile Include="Assets\Scripts\GenerateTiles.cs" />
+    <Compile Include="Assets\Scripts\Card Effects\GarnishCard.cs" />
     <Compile Include="Assets\Scripts\GridManager.cs" />
     <Compile Include="Assets\Scripts\Card Effects\BombCard.cs" />
     <Compile Include="Assets\Scripts\Tile.cs" />
+    <Compile Include="Assets\Scripts\Card Effects\GrillCard.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\Card Effects\_BaseCook.cs" />
+    <Compile Include="Assets\Scripts\Tutorial.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
